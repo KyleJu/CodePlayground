@@ -31,4 +31,21 @@ public class play {
         return v;
     }
 
+    // public static int[] back;
+    // back = new int[d];
+    // Arrays.fill(d, -1);
+    // int[] deno = new int {1,2,3};
+    // int r = findMin(d);
+
+    // public static int findMit(int d) {
+    //     if (back[d] != -1) { return back[d];}
+    //     if (d <= 0) return 0;
+    //     int i = Integer.MAX_VALUE - 10;
+    //     for (int i : deno) {
+    //         i = Math.min(i ,1 +findMin(d - deno[i]));
+    //     }
+    //     back[d] = i;
+    //     return i;
+
+    }
 }

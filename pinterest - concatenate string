@@ -1,0 +1,21 @@
+
+public String look_and_say(String s) {
+  if (s.length() == 0) return "";
+  
+  int counter = 0;
+  char pre = s.charAt(0);
+  StringBuilder sb = new StringBuilder("");
+  for (int i = 0 ; i< s.length(); i++) {
+      if (s.charAt(i) == pre) {
+        counter++;
+        //stop until no more
+      } else{
+        sb.append(counter + pre);
+        pre = s.charAt(i); // i is the new char
+        counter = 1;
+      }
+  }
+  sb.append(counter + pre);
+  
+  return sb.toString();
+}

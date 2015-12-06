@@ -1,0 +1,15 @@
+Arrays.sort(ar);
+
+public static int (int l, int r) {
+	if (r-l +1 ==1) return Integer.MAX_VALUE;
+	if (r-l+1 == 2) return Math.(a[r] - a[l]);
+
+	int[] median = findMedian(l,r);
+	int l = find(l, median);
+	int r = find(media, r);
+	int loc
+	if (median.length >1) {
+		int loca = Math.abs(ar[median[0]] - ar[median[2]]);
+	}
+	return Math.min(l, Math.min(r, loca);
+}

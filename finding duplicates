@@ -1,0 +1,9 @@
+find duplicate
+
+using a back up array n time and n space
+
+if one of  consecutive number is being replcaed 
+using n(n+1)/2 + b -a and n(n-1)(2n-1) +b^2 - a^2
+
+
+watch out for negative input -- if you use back up array 2^31 + Math.abs(negative value);

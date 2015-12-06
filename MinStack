@@ -1,0 +1,34 @@
+Stack use Deque<Integer> s = new ArrayDeque() push, pop, peek
+que Queue<Integer> que = new ArrayDeque() offer, poll peek
+PriorityQeueu<Pair<Integer, Integer>> pq = new PriorityQueue<Pair<Integer,Integer>>();
+
+
+class MinStack {
+    Deque<Integer> mins = new ArrayDeque<Integer>();
+    Deque<Integer> s = new ArrayDeque<Integer>();
+    
+    public void push(int x) {
+        s.push(x);
+        if (mins.peek() == null) {
+            mins.push(x);
+        } else if (mins.peek() >= x) {
+            mins.push(x);
+        }
+    }
+
+    public void pop() {
+        if (s.peek() == null) return;
+        int x = s.pop();
+        if (x == mins.peek()) {
+            mins.pop();
+        }
+    }
+
+    public int top() {
+        return s.peek();
+    }
+
+    public int getMin() {
+        return mins.peek();
+    }
+}

@@ -1,0 +1,19 @@
+// Find substring pattern - dp
+// if i = j -> 1 + D[i-1] [j-1];
+// else Math.max(D[i-1][j], D[i][j-1])
+
+
+public static int[][] t;
+
+public static int findL() {
+	t = new int[m][n];
+	for (int i = 1; i < m; i ++) {
+		for (int j= 1; j <n; j ++) {
+			if (s.charAt(i) == s.charAt(j)) {
+				d[i][j] = 1 + d[i-1][j-1];
+			} else {
+					d[i][j] = Math.max(d[i][j-1], d[i-1][j]);
+			}
+		}
+	}
+}

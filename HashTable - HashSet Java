@@ -1,0 +1,65 @@
+// Hashing
+// channing LinkedList<Integer>[]
+// open addressing hashing probe -  linear(+i), qaudratic(+i^2), double hash(+ R-(x mod R); r prime number < size)
+// require tomb stone for probing and assign -1. search until -1;
+// use Intger[] for table so you can assign null as tombstone
+
+
+// chainning - overhead allocating linkedlist - better for small load facto - memory
+// allocate lots of memories but better spatial locality - speed
+
+// ListIterator both direction hasNext(), remove(), next(), previous(), hasPrevious(), set(), nextIndex();
+
+
+// java open addressing
+
+// hashSet  
+
+public class HashTable {
+	private LinkedList<Integer>[] table;
+	private int tsize;
+	private int msize;
+	public HashTable(int size) {
+		table = new LinkedList[size];
+		tsize = size;
+		Arrays.fill(table, new LinkedList<Integer>());
+	}
+
+
+	public int hash(int n) {
+		return (n %size);
+	}
+
+	public void insert(int n ) {
+		table[hash(n)].add(n);
+		msize++;
+	}
+
+	public boolean search(int n) {
+		LinkedList<Integer> l = table[hash(n)];
+		for (int i : l) {
+			if (i == n) return true;
+		}
+
+		return false;
+	}
+
+
+
+	public void delete (int n) {
+				LinkedList<Integer> l = table[hash(n)];
+		ListIterator i = l.iterator();
+		while (i.hasNext()) {
+			int i = i.next();
+			if (i == n) {
+				i.remove(n);
+				break;
+			}
+		}
+	}
+
+	public void resize() {
+
+	}
+
+}

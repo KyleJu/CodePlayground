@@ -1,0 +1,28 @@
+public List<Pin>[] layout(Pin[] p, int c) {
+  List<Pin>[] res= new List[c];                // mistake -> List<Pin>[] res = new List[c];    ( Kyle)
+  Arrays.fill(res, new ArrayList<Pin>());
+    int[] cost = new int[c];
+  PriorityQueue<Integer> p = new PriorityQueue<Integer>(c, new Comparator<Integer>(){
+    @Override
+    public int compare(Integer o1, Integer o2) {
+      return cost[o1] - cost[o2];
+    }
+  });
+    
+    for (int i= 0; i < c; i ++) {
+        cost[i] = p[i].height;
+      res[i].add(p[i]);
+    }
+  
+  for (int i = 0; i < c; i ++) {
+      q.offer(i);
+  }
+  for (int i =c; i < p.length; i++) {
+    int cNum = q.poll();
+    Pin tp = p[i];
+    cost[cNum] += tp.height;
+    res[cNum].add(tp);
+    q.offer(cNum);
+  }
+  return res;
+}

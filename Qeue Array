@@ -1,0 +1,41 @@
+public class queue{
+	private int left;
+	private int right;
+	private int[] cArray;
+	private int size;
+
+	public queue() {
+		left = 0;
+		right = 0;
+		cArray = new int[100];
+		size = 0;
+	}
+
+	public void insert(int n) {
+		if (size >=100) {
+		 	resize();
+		}
+		cArray[right % 100] = n;
+		size++;
+		rihgt++;
+	}
+
+	public void delete() {
+		if (size == 0) {
+			return;
+		} else {
+			left--;
+			return cArray[left];
+			size--;
+		}
+	}
+
+	public boolean isEmpty() {
+		return size ==0;
+	}
+
+	public boolean isFull() {
+		return size ==100;
+	}
+
+}
